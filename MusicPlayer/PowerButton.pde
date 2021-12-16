@@ -1,8 +1,10 @@
+
 //Global variables
 String PowerButton = "Power";
 color purple=#E1ABF5 , blue=#6B6EFC , resetwhite=#FFFFFF , buttonColour;
 float PowerButtonX, PowerButtonY, PowerButtonWidth,PowerButtonHeight ;
-
+PFont textfont;
+color black=#000000;
 
 void PowerButton() {
   
@@ -16,23 +18,23 @@ void PowerButton() {
 }//endvoid PowerButton()
 
 void  PowerButtonDraw() {
- if ( mouseX>PowerButtonX && 
+ if ( mouseX>PowerButtonX &&  mouseX<PowerButtonX+PowerButtonWidth && mouseY>PowerButtonY && mouseY<PowerButtonY+PowerButtonHeight){
     buttonColour = purple;
-    hoverOverButtonFill();
-  } else {
+    } else {
     buttonColour = blue;
-    hoverOverButtonFill();
+ 
   }
- //textCode(PowerButton,width*3/100,PowerButtonX, PowerButtonY, PowerButtonWidth,PowerButtonHeight );
-}
+fill(buttonColour);
+ rect(PowerButtonX, PowerButtonY, PowerButtonWidth,PowerButtonHeight );
+ fill(resetwhite);
+ fill(black);
+ textAlign (CENTER, CENTER);
+  textFont(textfont,10);
+  text( PowerButton,PowerButtonX, PowerButtonY, PowerButtonWidth,PowerButtonHeight );
+  fill(resetwhite);
+ }
 //end PowerButtonDraw()
 
 void  PowerButtonMousePressed(){
 if(mouseX>PowerButtonX && mouseY>PowerButtonY&& mouseX<PowerButtonX+PowerButtonWidth &&  mouseY> PowerButtonY+PowerButtonHeight ) exit();
 }
-void hoverOverButtonFill() {
-  fill(buttonColour);
-  noStroke();
-  rect(PowerButtonX, PowerButtonY, PowerButtonWidth, PowerButtonHeight);
-  stroke(1); //reset stroke to 1 pixel
-  fill(resetwhite);}
