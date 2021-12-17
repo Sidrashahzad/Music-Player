@@ -21,6 +21,7 @@ void setup() {
   minim = new Minim (this);
   song1 = minim.loadFile(OSA Dress Code - Squadda B.mp3);
   song1.play();
+  
 }//end  setup()
 
 void draw() {
