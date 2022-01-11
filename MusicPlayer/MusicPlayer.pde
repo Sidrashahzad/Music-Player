@@ -38,4 +38,14 @@ PowerButtonMousePressed();
 
 
 void keyPressed() {
+  if (key == 'p') {
+    if ( song1.isPlaying() ) {
+      song1.pause();
+    } else if ( song1.isPlaying() ) {
+      song1.rewind();
+      song1.play();
+    } else {
+      song1.play();
+    }
+  }
 }//end void keyPressed() file
