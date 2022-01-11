@@ -19,11 +19,11 @@ void setup() {
  MusicPlayerButtons();
   //
   minim = new Minim (this);
-<<<<<<< HEAD
+
   song1 = minim.loadFile("OSA Dress Code - Squadda B.mp3");
-=======
+
   song1 = minim.loadFile("Music/OSA Dress Code - Squadda B.mp3");
->>>>>>> 9712a5c71164b5183c659359369b1b24e4ce5f96
+
   song1.play();
   
 }//end  setup()
