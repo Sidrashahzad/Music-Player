@@ -19,7 +19,11 @@ void setup() {
  MusicPlayerButtons();
   //
   minim = new Minim (this);
+<<<<<<< HEAD
   song1 = minim.loadFile("OSA Dress Code - Squadda B.mp3");
+=======
+  song1 = minim.loadFile("Music/OSA Dress Code - Squadda B.mp3");
+>>>>>>> 9712a5c71164b5183c659359369b1b24e4ce5f96
   song1.play();
   
 }//end  setup()
@@ -38,4 +42,14 @@ PowerButtonMousePressed();
 
 
 void keyPressed() {
+  if (key == 'p') {
+    if ( song1.isPlaying() ) {
+      song1.pause();
+    } else if ( song1.isPlaying() ) {
+      song1.rewind();
+      song1.play();
+    } else {
+      song1.play();
+    }
+  }
 }//end void keyPressed() file
