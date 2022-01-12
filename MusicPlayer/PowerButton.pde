@@ -14,6 +14,7 @@ void PowerButton() {
   PowerButtonWidth= displayWidth*1/20;
   PowerButtonHeight =  displayHeight*1/20;
 
+textfont= createFont("Harrington", 55);
   
 }//endvoid PowerButton()
 
@@ -36,5 +37,6 @@ fill(buttonColour);
 //end PowerButtonDraw()
 
 void  PowerButtonMousePressed(){
-if(mouseX>PowerButtonX && mouseY>PowerButtonY&& mouseX<PowerButtonX+PowerButtonWidth &&  mouseY> PowerButtonY+PowerButtonHeight ) exit();
+
+
 }

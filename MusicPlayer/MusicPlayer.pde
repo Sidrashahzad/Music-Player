@@ -16,40 +16,64 @@ AudioPlayer song1;//creates a "play List" variable holding extensions WAV, AIFF,
 void setup() {
   fullScreen();
   population();
- MusicPlayerButtons();
+  MusicPlayerButtons();
+  PowerButton();
+  
   //
   minim = new Minim (this);
 
-  song1 = minim.loadFile("OSA Dress Code - Squadda B.mp3");
+
 
   song1 = minim.loadFile("Music/OSA Dress Code - Squadda B.mp3");
 
-  song1.play();
-  
+  //song1.play();
 }//end  setup()
 
 void draw() {
- 
-
- 
+   PowerButtonDraw();
 }//end void draw()
 
 
-void mousePressed() {
-PowerButtonMousePressed(); 
-
-}//end void mousePressed()
-
-
 void keyPressed() {
-  if (key == 'p') {
+  //play-pause 
+  if (key == 'p' ) {
     if ( song1.isPlaying() ) {
       song1.pause();
-    } else if ( song1.isPlaying() ) {
+    } else if ( song1.position( ) >= song1.length()-2000 ) {
       song1.rewind();
       song1.play();
     } else {
       song1.play();
     }
   }
+  //play-stop
+  if (key == 's') {
+    if ( song1.isPlaying() ) {
+      song1.rewind();
+      song1.pause();
+    } else {
+     song1.rewind();
+    }
+  }
+  
+  //fastforward
+  if(key== 'f')song1.skip(1000);
+  
+ // fast rewind
+ if ( key == 'r') song1.skip(-1000);
+ 
+ // mute
+  if (key == 'm') { 
+    if ( song1.isMuted() ) {
+      song1.unmute();
+    } else {
+      song1.mute();
+    }
+  }
+ 
 }//end void keyPressed() file
+
+void mousePressed() {
+if(mouseX>= PowerButtonX && mouseY>=PowerButtonY && mouseX<= PowerButtonX+PowerButtonWidth &&  mouseY>= PowerButtonY+PowerButtonHeight ) exit();
+
+}//end void mousePressed()song1.isMuted
