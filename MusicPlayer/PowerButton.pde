@@ -37,6 +37,6 @@ fill(buttonColour);
 //end PowerButtonDraw()
 
 void  PowerButtonMousePressed(){
-
+if( mouseX > PowerButtonX && mouseY>PowerButtonY &&  mouseX<PowerButtonX+PowerButtonWidth  && mouseY<PowerButtonY+PowerButtonHeight) exit();
 
 }

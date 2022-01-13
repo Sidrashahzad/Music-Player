@@ -10,6 +10,8 @@ import ddf.minim.ugens.*;
 
 
 //Global Variables
+float rectX1, rectY1 ,rectWidth1, rectHeight1;
+float rectX2, rectY2 ,rectWidth2, rectHeight2;
 Minim minim;//creates object to access all function
 AudioPlayer song1;//creates a "play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
 
@@ -31,6 +33,10 @@ void setup() {
 
 void draw() {
    PowerButtonDraw();
+   
+   rect(rectX1, rectY1 ,rectWidth1, rectHeight1);
+   rect(rectX2, rectY2 ,rectWidth2, rectHeight2);
+   
 }//end void draw()
 
 
@@ -74,6 +80,6 @@ void keyPressed() {
 }//end void keyPressed() file
 
 void mousePressed() {
-if(mouseX>= PowerButtonX && mouseY>=PowerButtonY && mouseX<= PowerButtonX+PowerButtonWidth &&  mouseY>= PowerButtonY+PowerButtonHeight ) exit();
+ PowerButtonMousePressed();
 
 }//end void mousePressed()song1.isMuted
