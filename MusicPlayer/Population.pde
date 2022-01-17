@@ -18,10 +18,5 @@ void population() {
   rectWidth3  = displayWidth*1/16;
   rectHeight3 = displayWidth*1/16;
   
-  triX1  =   displayWidth*6.5/14;
-  triY1 = displayHeight*1/3;
-  triX2 =  displayWidth*6.5/14;
-  triY2 = displayHeight*1/3;
-  triX3 =   displayWidth*1/2;
-  triY3  = displayHeight*7/14;
+ 
 }//end void population()
