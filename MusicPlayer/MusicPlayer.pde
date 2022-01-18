@@ -1,5 +1,5 @@
 //liabrary
-import ddf.minim.*;
+  import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
 import ddf.minim.signals.*;
@@ -12,9 +12,13 @@ import ddf.minim.ugens.*;
 //Global Variables
 float rectX1, rectY1, rectWidth1, rectHeight1;
 float rectX2, rectY2, rectWidth2, rectHeight2;
-float rectX3,rectY3, rectWidth3, rectHeight3;
-float triX1,  triY1, triX2, triY2, triX3, triY3;
-Boolean  ;
+float rectX3, rectY3, rectWidth3, rectHeight3;
+float triX1, triY1, triX2, triY2, triX3, triY3;
+float rectX4, rectY4, rectWidth4, rectHeight4;
+float rectX5, rectY5, rectWidth5, rectHeight5;
+color  white = #FFFFFF , reset=white;
+Boolean  rect1=false ;
+Boolean  rect2=false ;
 Minim minim;//creates object to access all function
 int numberOfSongs = 2;
 AudioPlayer [] song = new AudioPlayer[numberOfSongs];//creates a "play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
@@ -37,77 +41,85 @@ void setup() {
 
 void draw() {
   PowerButtonDraw();
-
-  rect(rectX1, rectY1, rectWidth1, rectHeight1);
-  rect(rectX2, rectY2, rectWidth2, rectHeight2);
-  rect(rectX3,rectY3,  rectWidth3, rectHeight3);
-  triangle(triX1,  triY1, triX2, triY2, triX3, triY3);
-/*
+  fill (black);
+  rect(rectX4, rectY4, rectWidth4, rectHeight4);
+  fill (reset);
+  if (rect1==true)rect(rectX1, rectY1, rectWidth1, rectHeight1);
+  if (rect2==true ) rect(rectX2, rectY2, rectWidth2, rectHeight2);
+  rect(rectX3, rectY3, rectWidth3, rectHeight3);
+  
+   triangle(triX1, triY1, triX2, triY2, triX3, triY3);
+   rect ( rectX5, rectY5, rectWidth5, rectHeight5 );
+  /*
   if (song1.isLooping()){
-  println("Is Looping");
-  println(song1.loopCount() ); 
-  } */
+   println("Is Looping");
+   println(song1.loopCount() ); 
+   } */
 }//end void draw()
 
 
 void keyPressed() {
   currentSong ++;  
-  //play-pause 
-/*if (key == 'p' ) {
-    if ( currentSong.isPlaying() ) {
-      song1.pause();
-    } else if ( song1.position( ) >= song1.length()-2000 ) {
-      song1.rewind();
-      song1.play();
-    } else {
-      song1.play();
-    }
-  }
-  
 
-  //fastforward
-  if (key== 'f')song1.skip(1000);
-
-  // fast rewind
-  if ( key == 'r') song1.skip(-1000);
-
-  // mute
-  if (key == 'm') { 
-    if ( song1.isMuted() ) {
-      song1.unmute();
-    } else {
-      song1.mute();
-    }
-  } */
+   
+   //fastforward
+   if (key== 'f') song [currentSong].skip(1000);
+   
+   // fast rewind
+   if ( key == 'r')  song [currentSong].skip(-1000);
+   
+   // mute
+   if (key == 'm') { 
+   if (  song [currentSong].isMuted() ) {
+   song [currentSong].unmute();
+   } else {
+    song [currentSong].mute();
+   }
+   } 
   //loop
   int loopIntNum=2;
   if (key =='l'||key =='L')song[currentSong] .loop(loopIntNum);
-  
   //
-}//end void keyPressed() file
+  if (key == 'n' || key == 'N') {
+    if ( song[currentSong] .isPlaying() ) {
+      song[currentSong]. pause();
+      song[currentSong].rewind();
+
+     arrayFixError ();
+     
+      song[currentSong].play();
+    } else {
+      song[currentSong].rewind();
+       arrayFixError ();
+    }
+  } // end next button
+}//end void keyPressed() 
 
 void mousePressed() {
   PowerButtonMousePressed();
- 
-   //play-pause 
-/*if (key == 'p' ) {
-    if ( currentSong.isPlaying() ) {
-      song1.pause();
-    } else if ( song1.position( ) >= song1.length()-2000 ) {
-      song1.rewind();
-      song1.play();
-    } else {
-      song1.play();
-    }
-  }
+ currentSong ++;  
+  //play-pause 
+
+      
+  if ( mouseX >rectX4  && mouseY>rectY4 &&  mouseX<  rectX4+rectWidth4  && mouseY< rectY4+rectHeight4) {
+   if ( song[currentSong].isPlaying() ) {
+   song[currentSong].pause();
+   } else if ( song[currentSong].position( ) >= song[currentSong].length()-2000 ) {
+   song[currentSong].rewind();
+   song[currentSong].play();
+   } else {
+   song[currentSong].play();
+   }
+   }
+  
    //play-stop
-   /*
-  if (mouseX>rectX3 &&  mouseX<rectX3+rectWidth3 && mouseY>rectY3 && mouseY<rectY3+rectHeight3 ) {
-    if ( song1.isPlaying() ) {
-      song1.rewind();
-      song1.pause();
-    } else {
-      song1.rewind();
-    }
-  }*/
+ 
+   if (mouseX>rectX3 &&  mouseX<rectX3+rectWidth3 && mouseY>rectY3 && mouseY<rectY3+rectHeight3 ) {
+   if ( song[currentSong].isPlaying() ) {
+   song[currentSong].rewind();
+   song[currentSong].pause();
+   } else {
+   song[currentSong].rewind();
+   }
+   }
 }//end void mousePressed()song1.isMuted

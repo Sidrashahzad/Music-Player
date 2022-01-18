@@ -24,4 +24,12 @@ void population() {
  triY2 = displayHeight* 2/5;
  triX3 =  displayWidth*6.5/14;
  triY3 =  displayHeight* 2/8;
+ 
+ rectX4 =  displayWidth*6/14;;
+ rectY4  =displayHeight*1/4;;
+ rectWidth4 =  displayWidth*1/8;
+ rectHeight4 = displayHeight*1/6;
+ 
+ 
+ rectX5, rectY5, rectWidth5, rectHeight5
 }//end void population()
