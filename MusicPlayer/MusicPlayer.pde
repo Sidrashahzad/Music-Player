@@ -17,6 +17,7 @@ float triX1, triY1, triX2, triY2, triX3, triY3;
 float rectX4, rectY4, rectWidth4, rectHeight4;
 float rectX5, rectY5, rectWidth5, rectHeight5;
 float triX4, triY4, triX5, triY5, triX6, triY6;
+float triX7, triY7, triX8, triY8, triX9, triY9;
 float rectX6, rectY6, rectWidth6, rectHeight6;
 float rectX7, rectY7, rectWidth7, rectHeight7;
 color  white = #FFFFFF , reset=white;
@@ -53,10 +54,18 @@ void draw() {
   rect(rectX3, rectY3, rectWidth3, rectHeight3);
   
    triangle(triX1, triY1, triX2, triY2, triX3, triY3);
-   rect ( rectX5, rectY5, rectWidth5, rectHeight5 );
+  // forward
+  rect ( rectX5, rectY5, rectWidth5, rectHeight5 );
     triangle(triX4, triY4, triX5, triY5, triX6, triY6);
+    triangle(triX7, triY7, triX8, triY8, triX9, triY9);
+    
+    
   rect ( rectX6, rectY6, rectWidth6, rectHeight6 );
   rect ( rectX7, rectY7, rectWidth7, rectHeight7 );
+  
+  //forward
+  
+  
   /*
   if (song1.isLooping()){
    println("Is Looping");
@@ -68,7 +77,7 @@ void draw() {
 void keyPressed() {
  // currentSong ++;  
 
-   
+/*   
    //fastforward
    if (key== 'f') song [currentSong].skip(1000);
    
@@ -100,7 +109,7 @@ void keyPressed() {
        arrayFixError();
     }
   } // end next button
-  
+  */
   
   
   
@@ -117,24 +126,30 @@ void mousePressed() {
       
   if ( mouseX >rectX4  && mouseY>rectY4 &&  mouseX<  rectX4+rectWidth4  && mouseY< rectY4+rectHeight4)
   {
-   if ( song[currentSong].isPlaying() ) {
-   song[currentSong].pause();
-   } else if ( song[currentSong].position() >= song[currentSong].length()-2000 ) {
-   song[currentSong].rewind();
-   song[currentSong].play();
+   if ( song [currentSong].isPlaying() ) {
+   song [currentSong].pause();
+   } else if ( song [currentSong].position() >= song[currentSong].length()-2000 ) {
+   song [currentSong].rewind();
+   song [currentSong].play();
    } else {
-   song[currentSong].play();
+   song [currentSong].play();
    }
    }
   
    //play-stop
  
    if (mouseX>rectX3 &&  mouseX<rectX3+rectWidth3 && mouseY>rectY3 && mouseY<rectY3+rectHeight3 ) {
-   if ( song[currentSong].isPlaying() ) {
-   song[currentSong].rewind();
-   song[currentSong].pause();
+   if ( song [currentSong].isPlaying() ) {
+   song [currentSong].rewind();
+   song [currentSong].pause();
    } else {
-   song[currentSong].rewind();
+   song [currentSong].rewind();
    }
    }
+   
+   // forward
+   if (mouseX> rectX5 &&  mouseX< rectX5+rectWidth5 && mouseY>rectY5 && mouseY<rectY5+rectHeight5 ) song [currentSong].skip(1000);
+   
+    
+   
 }//end void mousePressed()song1.isMuted

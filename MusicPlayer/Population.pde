@@ -32,10 +32,23 @@ void population() {
  
  // forward
  rectX5 =  displayWidth*8/14; 
- rectY5 =displayHeight*1/4;;
- rectWidth5  =  displayWidth*1/8;
- rectHeight5 = displayHeight*1/6;
+ rectY5 =displayHeight*1/4;
+ rectWidth5  =  displayWidth*1/10.7;
+ rectHeight5 = displayHeight*1/8;
  
+triX4 =  displayWidth*8.3/14;
+triY4 =displayHeight*2.1/8;
+triX5=  displayWidth*8.3/14;
+triY5=displayHeight*3/8;
+triX6=  displayWidth*8.8/14;
+triY6=displayHeight*2.5/8;
+
+triX7=  displayWidth*8.8/14;
+triY7 =displayHeight*2.1/8;
+triX8=  displayWidth*8.8/14;
+triY8=displayHeight*3/8;
+triX9=  displayWidth*9.3/14;
+triY9=displayHeight*2.5/8;
   //rewind
  rectX6  = displayWidth*4/14; 
  rectY6  =  displayHeight*1/4;;

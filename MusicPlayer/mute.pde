@@ -1,4 +1,4 @@
-void muteButtonSetup();
+/*void muteButtonSetup();
 
 
 
@@ -6,4 +6,4 @@ void muteButtonDraw();
 
 void muteButtonMousePressed();
 
-void muteBUttonKeyPressed();
+void muteBUttonKeyPressed();*/
