@@ -30,6 +30,21 @@ void population() {
  rectWidth4 =  displayWidth*1/8;
  rectHeight4 = displayHeight*1/6;
  
+ // forward
+ rectX5 =  displayWidth*8/14; 
+ rectY5 =displayHeight*1/4;;
+ rectWidth5  =  displayWidth*1/8;
+ rectHeight5 = displayHeight*1/6;
  
- rectX5, rectY5, rectWidth5, rectHeight5
+  //rewind
+ rectX6  = displayWidth*4/14; 
+ rectY6  =  displayHeight*1/4;;
+ rectWidth6 =  displayWidth*1/8;
+ rectHeight6 = displayHeight*1/6;
+ 
+ // mute
+ rectX7 = displayWidth*4/14; 
+ rectY7=  displayHeight*3/4;
+ rectWidth7 =  displayWidth*1/8;
+ rectHeight7= displayHeight*1/6;
 }//end void population()

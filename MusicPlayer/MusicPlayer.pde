@@ -16,13 +16,17 @@ float rectX3, rectY3, rectWidth3, rectHeight3;
 float triX1, triY1, triX2, triY2, triX3, triY3;
 float rectX4, rectY4, rectWidth4, rectHeight4;
 float rectX5, rectY5, rectWidth5, rectHeight5;
+float triX4, triY4, triX5, triY5, triX6, triY6;
+float rectX6, rectY6, rectWidth6, rectHeight6;
+float rectX7, rectY7, rectWidth7, rectHeight7;
 color  white = #FFFFFF , reset=white;
 Boolean  rect1=false ;
 Boolean  rect2=false ;
 Minim minim;//creates object to access all function
-int numberOfSongs = 2;
+int numberOfSongs = 3;
 AudioPlayer [] song = new AudioPlayer[numberOfSongs];//creates a "play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
 int currentSong = numberOfSongs- numberOfSongs; //current song 0
+
 void setup() {
   fullScreen();
   population();
@@ -35,7 +39,7 @@ void setup() {
 
   song [currentSong] = minim.loadFile("Music/OSA Dress Code - Squadda B.mp3");
   song [currentSong+1] = minim.loadFile("Music/Space Age Hustle - Squadda B (2).mp3");         
-
+   song [currentSong+2] = minim.loadFile("Music/Somewhere Fuse - French Fuse.mp3");
   //song1.play();
 }//end  setup()
 
@@ -50,6 +54,9 @@ void draw() {
   
    triangle(triX1, triY1, triX2, triY2, triX3, triY3);
    rect ( rectX5, rectY5, rectWidth5, rectHeight5 );
+    triangle(triX4, triY4, triX5, triY5, triX6, triY6);
+  rect ( rectX6, rectY6, rectWidth6, rectHeight6 );
+  rect ( rectX7, rectY7, rectWidth7, rectHeight7 );
   /*
   if (song1.isLooping()){
    println("Is Looping");
@@ -59,7 +66,7 @@ void draw() {
 
 
 void keyPressed() {
-  currentSong ++;  
+ // currentSong ++;  
 
    
    //fastforward
@@ -84,15 +91,22 @@ void keyPressed() {
     if ( song[currentSong] .isPlaying() ) {
       song[currentSong]. pause();
       song[currentSong].rewind();
-
-     arrayFixError ();
-     
+    //
+     arrayFixError();
+     //
       song[currentSong].play();
     } else {
       song[currentSong].rewind();
-       arrayFixError ();
+       arrayFixError();
     }
   } // end next button
+  
+  
+  
+  
+  
+  
+  
 }//end void keyPressed() 
 
 void mousePressed() {
@@ -101,10 +115,11 @@ void mousePressed() {
   //play-pause 
 
       
-  if ( mouseX >rectX4  && mouseY>rectY4 &&  mouseX<  rectX4+rectWidth4  && mouseY< rectY4+rectHeight4) {
+  if ( mouseX >rectX4  && mouseY>rectY4 &&  mouseX<  rectX4+rectWidth4  && mouseY< rectY4+rectHeight4)
+  {
    if ( song[currentSong].isPlaying() ) {
    song[currentSong].pause();
-   } else if ( song[currentSong].position( ) >= song[currentSong].length()-2000 ) {
+   } else if ( song[currentSong].position() >= song[currentSong].length()-2000 ) {
    song[currentSong].rewind();
    song[currentSong].play();
    } else {
