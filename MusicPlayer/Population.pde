@@ -52,12 +52,43 @@ triY9=displayHeight*2.5/8;
   //rewind
  rectX6  = displayWidth*4/14; 
  rectY6  =  displayHeight*1/4;;
- rectWidth6 =  displayWidth*1/8;
- rectHeight6 = displayHeight*1/6;
+ rectWidth6 =  displayWidth*1/10.7;
+ rectHeight6 = displayHeight*1/8;
  
+ triX10  = displayWidth*4.5/14;
+ triY10=displayHeight*2.1/8;
+ triX11= displayWidth*4.5/14;
+ triY11=displayHeight*3/8; 
+ triX12= displayWidth*4/14;
+ triY12=displayHeight*2.5/8;
+ 
+ triX13 = displayWidth*5.0/14;
+ triY13 =displayHeight*2.1/8; 
+ triX14 = displayWidth*5.0/14;
+ triY14 =displayHeight*3/8; 
+ triX15= displayWidth*4.5/14;
+ triY15=displayHeight*2.5/8;
  // mute
  rectX7 = displayWidth*4/14; 
  rectY7=  displayHeight*3/4;
- rectWidth7 =  displayWidth*1/8;
- rectHeight7= displayHeight*1/6;
+ rectWidth7 =  displayWidth*1/9;
+ rectHeight7= displayHeight*1/8;
+ 
+ //loop
+ rectX8= displayWidth*8/14;
+ rectY8=  displayHeight*3/4; 
+ rectWidth8=  displayWidth*1/9;
+ rectHeight8= displayHeight*1/8;
+ 
+ //next
+  rectX9  =  displayWidth*10/14;
+  rectY9 =displayHeight*1/4;
+  rectWidth9 =  displayWidth*1/10.7;
+  rectHeight9= displayHeight*1/8;
+ 
+ // back 
+ /*
+ rectX10, rectY10,rectWidth10,rectHeight10/
+ */
+ 
 }//end void population()
