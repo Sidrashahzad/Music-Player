@@ -70,13 +70,13 @@ triY9=displayHeight*2.5/8;
  triY15=displayHeight*2.5/8;
  // mute
  rectX7 = displayWidth*4/14; 
- rectY7=  displayHeight*3/4;
+ rectY7=  displayHeight*2/4;
  rectWidth7 =  displayWidth*1/9;
  rectHeight7= displayHeight*1/8;
  
  //loop
  rectX8= displayWidth*8/14;
- rectY8=  displayHeight*3/4; 
+ rectY8=  displayHeight*2/4; 
  rectWidth8=  displayWidth*1/9;
  rectHeight8= displayHeight*1/8;
  
@@ -86,9 +86,34 @@ triY9=displayHeight*2.5/8;
   rectWidth9 =  displayWidth*1/10.7;
   rectHeight9= displayHeight*1/8;
  
+ triX16=  displayWidth*10.3/14;
+ triY16=displayHeight*2.1/8;
+ triX17=  displayWidth*10.3/14;
+ tri17 =displayHeight*3/8; 
+ triX18=  displayWidth*10.9/14;
+ triY18=displayHeight*2.5/8;
+ 
+ rectX11=  displayWidth*10.9/14;
+ rectY11 =displayHeight*2.1/8;
+ rectWidth11 = displayWidth*1/55;
+ rectHeight11= displayHeight*1/10;
  // back 
- /*
- rectX10, rectY10,rectWidth10,rectHeight10/
- */
+
+ rectX10=  displayWidth*2/14; 
+ rectY10 =displayHeight*1/4;
+ rectWidth10 =  displayWidth*1/10.7;
+ rectHeight10= displayHeight*1/8;
+ 
+ triX19=  displayWidth*3/14; 
+ triY19=displayHeight*2.1/8;
+ triX20=  displayWidth*3/14; 
+ triY20=displayHeight*3/8;
+ triX21=  displayWidth*2.4/14; 
+ triY21=displayHeight*2.5/8;
+ 
+ rectX12=  displayWidth*2.15/14; 
+ rectY12=displayHeight*2.1/8;
+ rectWidth12= displayWidth*1/55;
+ rectHeight12= displayHeight*1/10;
  
 }//end void population()

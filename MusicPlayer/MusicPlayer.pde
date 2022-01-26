@@ -25,6 +25,10 @@ float triX13, triY13, triX14, triY14, triX15, triY15;
 float   rectX8, rectY8, rectWidth8, rectHeight8 ;
 float  rectX9, rectY9 ,rectWidth9 ,rectHeight9;
 float rectX10, rectY10,rectWidth10,rectHeight10;
+float triX16,triY16,triX17,tri17,triX18,triY18;
+float rectX11, rectY11 ,rectWidth11 ,rectHeight11;
+float triX19,triY19,triX20,triY20,triX21,triY21;
+float rectX12, rectY12,rectWidth12 ,rectHeight12;
 String muteButton = "mute";
 String loopButton = "loop";
 color  white = #FFFFFF , reset=white;
@@ -96,9 +100,12 @@ rect ( rectX7, rectY7, rectWidth7, rectHeight7 );
  
   //next
   rect ( rectX9, rectY9 ,rectWidth9 ,rectHeight9);
-  
+  triangle(triX16,triY16,triX17,tri17,triX18,triY18);
+  rect(rectX11, rectY11 ,rectWidth11 ,rectHeight11);
   // back 
   rect ( rectX10, rectY10,rectWidth10,rectHeight10);
+  triangle(triX19,triY19,triX20,triY20,triX21,triY21);
+  rect(rectX12, rectY12,rectWidth12 ,rectHeight12);
   /*
   if (song1.isLooping()){
    println("Is Looping");
@@ -217,7 +224,20 @@ void mousePressed() {
 
    
    
-   
+    if (mouseX> rectX10 &&  mouseX< rectX10+rectWidth10 && mouseY>rectY10 && mouseY<rectY10+rectHeight10) {
+    if ( song[currentSong] .isPlaying() ) {
+      song[currentSong]. pause();
+      song[currentSong].rewind();
+    //
+     arrayFixError2();
+     //
+      song[currentSong].play();
+    } else {
+      song[currentSong].rewind();
+       arrayFixError2();
+    }
+  } // end back button
+
    
    
 }//end void mousePressed()
